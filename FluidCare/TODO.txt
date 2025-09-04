@@ -1,0 +1,7 @@
+### TODO 
+
+Support Page (Doesn't send emails or anything yet)
+
+Interval Editing 
+-   Either allow the addition and removal of items and show the items within that interval aswell or allow direct changing of total amount (graphs based on items would suffer)
+

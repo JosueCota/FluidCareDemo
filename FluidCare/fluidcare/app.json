@@ -1,0 +1,68 @@
+{
+  "expo": {
+    "name": "FluidCare Demo",
+    "slug": "fluidcare-demo",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/favicon/Light.png",
+    "scheme": "myappdemo",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "icon": {
+        "light": "./assets/favicon/Light.png",
+        "dark": "./assets/favicon/Dark.png",
+        "tinted": "./assets/favicon/Tinted.png"
+      }
+    },
+    "android": {
+      "softwareKeyboardLayoutMode": "pan",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/favicon/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.anonymous.fluidcaredemo"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/favicon/Dark.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#ffffff",
+          "image": "./assets/favicon/splash-icon-dark.png",
+          "dark": {
+            "image": "./assets/favicon/splash-icon-light.png",
+            "backgroundColor": "#000000"
+          },
+          "imageWidth": 200
+        }
+      ],
+      "expo-asset",
+      "expo-font"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "315866b4-cc50-46e5-8a66-4c5ab1fe6add"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/315866b4-cc50-46e5-8a66-4c5ab1fe6add"
+    },
+    "owner": "josuecota"
+  }
+}
