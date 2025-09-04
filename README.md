@@ -24,7 +24,8 @@ their treatment schedules. The app provides intuitive visualizations and persona
 
 ### 4. Notifications & Reminders
   -  Set personalized reminders for medication refills and medication times.
-<img width="200" height="420" alt="image" src="https://github.com/user-attachments/assets/5dde3f0d-5d24-4858-838e-19796812f0a3" />
+<img width="200" height="420" alt="image" src="https://github.com/user-attachments/assets/403a2868-2c4b-4f2a-85e9-635f019ee6eb" />
+<img width="200" height="420" alt="image" src="https://github.com/user-attachments/assets/315bff1a-156d-4f01-b82a-4dda598babac" />
 
 ### 5. Localization
   -  Supports both English and Spanish languages.
