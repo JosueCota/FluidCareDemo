@@ -1,4 +1,3 @@
-import { CreateMedicationSchema } from "@/utility/yupSchemas";
 import { Formik } from "formik";
 import React, { useEffect, useState } from "react";
 import { View, Text } from "react-native";

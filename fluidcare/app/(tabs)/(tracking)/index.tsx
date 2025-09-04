@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import CustomHeader from "@/components/misc/CustomHeader";
 import NavButton from "@/components/form/NavButton";
 import { Intervals } from "@/utility/types";
-import { currentTimeFrame } from "@/utility/data";
 import { CurveType, LineChart, lineDataItem } from "react-native-gifted-charts";
 import {
   dupeFirstDataPoint,

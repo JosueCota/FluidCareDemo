@@ -12,10 +12,6 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { ScrollView, View } from "react-native";
 
-type error = {
-  deletePrompt?: string;
-};
-
 type Props = {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;

@@ -8,7 +8,6 @@ import { TimeFrame } from "@/utility/types";
 import {
   decreaseMonth,
   increaseMonth,
-  shouldDisableNextMonth,
 } from "@/utility/utilityFunctions";
 
 type Props = {

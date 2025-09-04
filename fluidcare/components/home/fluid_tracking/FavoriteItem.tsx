@@ -1,5 +1,5 @@
 import { getDrinkIcon } from "@/utility/data";
-import { AddFavoriteItem, Favorite_Items, FormValues } from "@/utility/types";
+import { Favorite_Items, FormValues } from "@/utility/types";
 import React from "react";
 import { View, Text } from "react-native";
 import IconButton from "../../form/IconButton";

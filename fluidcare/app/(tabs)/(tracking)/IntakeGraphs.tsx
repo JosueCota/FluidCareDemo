@@ -1,7 +1,7 @@
 import { ScrollView, View, RefreshControl } from "react-native";
 import React, { useEffect, useState } from "react";
 import { lineDataItem, pieDataItem } from "react-native-gifted-charts";
-import { Intervals, TimeFrame } from "@/utility/types";
+import { TimeFrame } from "@/utility/types";
 import {
   dupeFirstDataPoint,
   getDaysInInterval,

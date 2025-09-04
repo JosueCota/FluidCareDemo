@@ -4,7 +4,6 @@ import EmptyListComponent from "@/components/misc/EmptyListComponent";
 import Loader from "@/components/misc/Loader";
 import { useUser } from "@/context/UserContext";
 import { currentTimeFrame } from "@/utility/data";
-import { intervals } from "@/utility/DemoData";
 import { Intervals, TimeFrame } from "@/utility/types";
 import {
   capitalizeFirstLetter,
@@ -20,6 +19,7 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { View, Text, TouchableOpacity, FlatList } from "react-native";
 import {intervals as mock_intervals} from "@/utility/DemoData"
+
 const IntervalsPage = () => {
   const [intervals, setIntervals] = useState<Intervals[]>(mock_intervals);
   const { i18n, t } = useTranslation();

@@ -2,7 +2,6 @@ import { ScrollView, View } from "react-native";
 import React, { useRef } from "react";
 import ProgressCard from "@/components/home/fluid_tracking/ProgressCard";
 import { safeDate } from "@/utility/utilityFunctions";
-import Loader from "@/components/misc/Loader";
 import AddItemForm from "@/components/home/fluid_tracking/AddItemForm";
 import ItemListContainer, {
   ItemListHandle,

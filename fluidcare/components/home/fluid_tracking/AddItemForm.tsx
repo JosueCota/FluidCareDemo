@@ -10,9 +10,6 @@ import CustomDropdown from "../../form/CustomDropdown";
 import { useTranslation } from "react-i18next";
 import {
   getFluidTag,
-  mlToOz,
-  ozToMl,
-  showToast,
 } from "@/utility/utilityFunctions";
 import CrossSVG from "@/assets/icons/misc/xcross.svg";
 import StarSVG from "@/assets/icons/misc/star-filled.svg";
@@ -21,7 +18,7 @@ import IconButton from "../../form/IconButton";
 import ModalContentWrapper from "../../misc/ModalContentWrapper";
 import CustomModal from "../../misc/CustomModal";
 import CustomButton from "../../form/CustomButton";
-import { AddFavoriteItem, Favorite_Items, Items } from "@/utility/types";
+import { Favorite_Items, Items } from "@/utility/types";
 import FavoriteItem from "./FavoriteItem";
 import { favoriteItems as FavoriteItems } from "@/utility/DemoData";
 

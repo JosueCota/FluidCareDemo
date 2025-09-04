@@ -5,7 +5,7 @@ import { SupportEmailSchema } from "@/utility/yupSchemas";
 import { Formik } from "formik";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Text, View, Linking } from "react-native";
+import { Text, View} from "react-native";
 
 const SendSupportEmail = () => {
   const { t } = useTranslation();  

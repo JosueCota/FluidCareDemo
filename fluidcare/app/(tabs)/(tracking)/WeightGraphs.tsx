@@ -3,7 +3,7 @@ import { RefreshControl, ScrollView, View, Text } from "react-native";
 import { barDataItem, lineDataItem } from "react-native-gifted-charts";
 import { useTranslation } from "react-i18next";
 import { useUser } from "@/context/UserContext";
-import { Dry_Weight, Intervals } from "@/utility/types";
+import { Intervals } from "@/utility/types";
 
 import {
   dupeFirstDataPoint,

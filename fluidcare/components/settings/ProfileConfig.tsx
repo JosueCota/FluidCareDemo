@@ -10,18 +10,14 @@ import { Platform, ScrollView, Text, View } from "react-native";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import { days } from "@/utility/data";
 import {
-  arraysEqual,
   daysToArray,
   formatHours,
   formatMinutes,
-  showToast,
   timeOfDay,
   timeToDate,
 } from "@/utility/utilityFunctions";
 import { UpdateUserSchema } from "@/utility/yupSchemas";
-import { useUser } from "@/context/UserContext";
 import { useTranslation } from "react-i18next";
-import { Notifications, User } from "@/utility/types";
 import Loader from "@/components/misc/Loader";
 import { user } from "@/utility/DemoData";
 

@@ -1,19 +1,11 @@
-import { drinkTypes, getDrinkIcon } from "@/utility/data";
-import { DrinkTypes, Items } from "@/utility/types";
+import { getDrinkIcon } from "@/utility/data";
+import { Items } from "@/utility/types";
 import React, { useState } from "react";
 import { View, Text } from "react-native";
 import IconButton from "../../form/IconButton";
 import { getFluidTag, mlToOz } from "@/utility/utilityFunctions";
 import { useUser } from "@/context/UserContext";
-import CustomModal from "../../misc/CustomModal";
-import { Formik } from "formik";
-import ValidationError from "../../form/ValidationError";
-import CustomDropdown from "../../form/CustomDropdown";
-import CustomTextInput from "../../form/CustomTextInput";
 import { useTranslation } from "react-i18next";
-import CustomButton from "../../form/CustomButton";
-import { ItemSchema } from "@/utility/yupSchemas";
-import ModalContentWrapper from "../../misc/ModalContentWrapper";
 import ConfirmDelete from "@/components/form/ConfirmButton";
 
 type Props = {

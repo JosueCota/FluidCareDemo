@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, RefreshControl } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import React, { useEffect, useState } from "react";
 import CustomHeader from "@/components/misc/CustomHeader";
 import NavButton from "@/components/form/NavButton";

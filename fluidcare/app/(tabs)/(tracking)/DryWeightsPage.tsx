@@ -3,7 +3,7 @@ import ConfirmDelete from "@/components/form/ConfirmButton";
 import DryWeight from "@/components/settings/DryWeight";
 import { Dry_Weight } from "@/utility/types";
 import { isoToFormattedDate } from "@/utility/utilityFunctions";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { View, Text, FlatList } from "react-native";
 import EmptyListComponent from "@/components/misc/EmptyListComponent";

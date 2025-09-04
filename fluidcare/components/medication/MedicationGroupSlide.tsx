@@ -3,7 +3,6 @@ import CustomButton from "@/components/form/CustomButton";
 import CustomTextInput from "@/components/form/CustomTextInput";
 import MultiSelectBoxes from "@/components/form/MultiSelectBoxes";
 import ValidationError from "@/components/form/ValidationError";
-import { CreateMedGroupSchema } from "@/utility/yupSchemas";
 import { Formik } from "formik";
 import React from "react";
 import {
