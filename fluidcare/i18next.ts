@@ -6,7 +6,6 @@ import en from './utility/locales/en.json';
 import es from './utility/locales/es.json';
 
 i18next
-    // .use(languageDetector)
     .use(initReactI18next)
     .init({
     fallbackLng: 'en',
