@@ -7,7 +7,7 @@ their treatment schedules. The app provides intuitive visualizations and persona
   -  Track daily fluid intake during dialysis intervals.
   -  Record arrival and leaving weights to monitor fluid changes.
   -  Visualize total fluids consumed versus recommended intake.
-<img width="200" height="420" alt="image" src="https://github.com/user-attachments/assets/b3b1e406-cd12-49e8-8bf6-484ae8b157c8" />
+<img width="200" height="420" alt="image" src="https://github.com/user-attachments/assets/227b4151-d893-4dfa-95bd-f55848956aeb" />
 <img width="200" height="420" alt="image" src="https://github.com/user-attachments/assets/1d1569fc-9d1c-469b-a00f-7e36a774dbb9" />
 
 ### 2. Graphs & Insights
