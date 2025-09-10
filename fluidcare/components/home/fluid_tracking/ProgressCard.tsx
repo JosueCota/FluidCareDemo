@@ -39,7 +39,6 @@ const getColorForPercent = (p: number) => {
 const ProgressCard = ({ progress, startDate, endDate }: Props) => {
   const { t, i18n } = useTranslation();
   const { unit, dailyIntake } = useUser();
-  const [show, setShow] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const days = getDaysInInterval(startDate, endDate);
   const [percent, setPercent] = useState<number>(0);
@@ -60,15 +59,10 @@ const ProgressCard = ({ progress, startDate, endDate }: Props) => {
   if (loading) return <Loader />;
 
   return (
-    <View className="bg-white border rounded-lg mx-auto px-6  w-[90%] pb-4 my-6">
-      <TouchableOpacity onPress={() => setShow((prev) => !prev)}>
-        <MaterialIcons
-          className="absolute left-0 top-5"
-          name={show ? "arrow-upward" : "arrow-downward"}
-          size={20}
-        />
+    <View className="bg-white ">
+      <View className=" pt-4 pb-4 mb-3 bg-blue-300 rounded-b-3xl ">
         <Text
-          className={`text-center mt-4 mb-2 text-2xl font-semibold tracking-tighter`}
+          className={`text-center text-3xl font-bold tracking-tighter text-white`}
         >
           {capitalizeFirstLetter(startDate.toLocaleDateString(i18n.language, {
             month: "short",
@@ -82,59 +76,55 @@ const ProgressCard = ({ progress, startDate, endDate }: Props) => {
             weekday: "short",
           }))}
         </Text>
-        <MaterialIcons
-          className="absolute right-0 top-5"
-          name={show ? "arrow-upward" : "arrow-downward"}
-          size={20}
-        />
-      </TouchableOpacity>
-      <Text className="text-center font-semibold tracking-widest">
-        {formatTime(startDate, false)}
-      </Text>
-      {show && (
-        <View className="pt-2 rounded-sm h-[8rem] overflow-hidden flex-row justify-around gap-2">
-          <View className="gap-4 justify-center">
+        <Text className="text-center font-semibold tracking-widest text-xl italic text-white">
+        {t("med-group-at")} {formatTime(startDate, false)}
+        </Text>
+      </View>
+      <View className="w-[95%] p-6 pt-4 mx-auto bg-white rounded-md elevation-md mb-4 ">
+        <Text className="text-2xl font-bold text-center mb-2">{t("progress-card-modal-header")}</Text>
+        <IconButton
+          iconName="info"
+          style="absolute right-2 top-2"
+          strokeWidth={1}
+          size={24}
+          onPress={() => setIsModalOpen((prev) => !prev)}
+          />
+        <View className="h-[8rem] w-full flex-row justify-around its">
+          <View className="justify-around">
             <ProgressCardLegend
               label={"0-100%"}
               color="bg-success"
               tooltip={t(getTipForPercent(30))}
-            />
+              />
             <ProgressCardLegend
               label={"+1-15%"}
               color="bg-[#FFB76B]"
               tooltip={t(getTipForPercent(101))}
-            />
+              />
             <ProgressCardLegend
               label={">15%"}
               color="bg-danger"
               tooltip={t(getTipForPercent(120))}
-            />
+              />
           </View>
-          <IconButton
-            iconName="info"
-            style="absolute -right-2"
-            strokeWidth={1}
-            size={20}
-            onPress={() => setIsModalOpen((prev) => !prev)}
-          />
           <AnimatedCircularProgress
-            size={165}
-            width={14}
+            size={175}
+            width={15}
             fill={percent}
             tintColor={getColorForPercent(percent)}
             backgroundColor="#333"
-            backgroundWidth={13}
+            backgroundWidth={14}
             lineCap="round"
             fillLineCap="round"
             arcSweepAngle={180}
             rotation={-90}
-          >
+            >
             {(fill) => (
-              <View className="pb-8 flex-row gap-2 items-center">
+              <View className="pb-8 max-w-[125px] overflow-hidden flex-row gap-2 items-center">
                 <Text
                   className={`text-2xl font-bold`}
                   style={{ color: getColorForPercent(percent) }}
-                >
+                  >
                   {Math.round(fill)}%
                 </Text>
                 <Tooltip tooltipText={t("progress-card-info")}>
@@ -156,12 +146,12 @@ const ProgressCard = ({ progress, startDate, endDate }: Props) => {
             )}
           </AnimatedCircularProgress>
         </View>
-      )}
+      </View>
       <CustomModal setIsOpen={setIsModalOpen} isOpen={isModalOpen}>
         <ModalContentWrapper
           headerLabel={t("progress-card-modal-header")}
           closeModal={setIsModalOpen}
-        >
+          >
           <ScrollView className="px-3 mt-2 h-[250px]">
             <Text className="mb-2">{t("progress-card-modal-content-1")}</Text>
             <Text className="mb-2">{t("progress-card-modal-content-2")}</Text>

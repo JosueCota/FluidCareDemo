@@ -6,8 +6,8 @@ const MedicalDisclaimer = () => {
   const {t} = useTranslation();
 
   return (
-    <ScrollView className='flex-1 bg-white'>
-        <Text className='text-lg p-4 my-4 text-center'>{t("medical-disclaimer")}</Text>
+    <ScrollView className='flex-1 bg-grey-100'>
+        <Text className='text-xl p-4 my-3 text-center'>{t("medical-disclaimer")}</Text>
     </ScrollView>
   )
 }

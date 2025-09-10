@@ -6,7 +6,7 @@
     "onboard-title-3": "¡Aprobado por Médicos!",
     "onboard-content-3": "Desarrollado en colaboración con médicos reales para garantizar que la información que recibe sea precisa, confiable y adaptada a sus necesidades.",
     
-    "btn-get-started": "¡Empieze!",
+    "btn-get-started": "¡Empieza!",
     "btn-back":"Atrás",
     "btn-continue": "Continuar",
     "btn-submit":"Registrar",
@@ -65,12 +65,14 @@
     "input-theme-dark":"Oscuro",
     "input-theme-light":"Claro",
 
-    "nav-support":"Apoyo",
+    "nav-support":"Apoyo",    
+    "nav-support-email":"Envia Correo Electrónico de Soporte",
     "nav-delete-acc":"Eliminar Cuenta",
     "nav-med-discl":"Descargo de Responsabilidad Médica",
     "nav-faq-page":"Preguntas Frecuentes",
     "nav-notifications":"Notificaciones",
     "nav-settings":"Ajustes",
+    "nav-config":"Configuración",
     
     "change-fluid-intake-label":"Cambiar Ingesta Diaria de Líquido",
 
@@ -166,7 +168,7 @@
     "settings-user-label": "Usuario",
     "settings-other-label": "Otro",
     
-    "add-item-form-info-content":"Puedes usar este formulario para agregar y registrar los líquidos que has consumido durante tu sesión actual. También puedes agregar bebidas que bebes con frecuencia.\n\nPara agregar una bebida a tus favoritos, primero completa el formulario y luego presiona el botón de estrella. Después, podrás encontrarla al presionar el botón 'Seleccionar de favoritos'.\n\nPara ayudarte a calcular las porciones para los diferentes tamaños de los recipientes más comunes, también hemos incluido un diagrama a continuación para ayudarte a estimar la cantidad que has bebido.",
+    "add-item-form-info-content":"Puedes usar este formulario para agregar y registrar los líquidos que has consumido durante tu sesión actual. También puedes agregar bebidas que bebes con frecuencia a tus favoritos.\n\nPara agregar una bebida a tus favoritos, primero completa el formulario y luego presiona el botón de estrella. Después, podrás encontrarla al presionar el botón 'Seleccionar de favoritos'.\n\nPara ayudarte a calcular las porciones para los diferentes tamaños de los recipientes más comunes, también hemos incluido un diagrama a continuación para ayudarte a estimar la cantidad que has bebido.",
     "add-item-form-info-header":"Agregando Líquidos",
 
     "favorites-button-label":"Elije Entre Tus Favoritos",
@@ -258,15 +260,16 @@
     "faq-weight-header": "Preguntas Sobre Peso",
     "faq-q-1": "¿Puedo usar esta aplicación si tengo diálisis peritoneal?",
     "faq-a-1": "Aunque esta aplicación se diseñó pensando en la hemodiálisis, debería funcionar para personas en diálisis peritoneal. Se aplicarán restricciones de líquidos, y aunque su diálisis sea más frecuente, debería ayudarle durante su proceso.",
-    "faq-q-2": "¿Cuáles son los síntomas comunes en los pacientes en diálisis y cómo puedo evitarlos?",
-    "faq-a-2": "Un paciente en diálisis puede sentir múltiples síntomas, algunos durante el tratamiento y otros entre sesiones. \n\nLos calambres musculares son un síntoma común que se produce principalmente por deshidratación. Para evitarlos o aliviarlos durante un calambre, beba líquidos y manténgase hidratado. Este síntoma es común después de la diálisis debido a la eliminación de líquidos del cuerpo.\n\nLa hinchazón y la distensión abdominal son otro síntoma común en los pacientes en diálisis. Este síntoma suele deberse a una sobrecarga de líquidos y puede ser un signo de consumo excesivo de líquidos. Intente controlar su consumo de líquidos y reducirlo si su cuerpo suele sufrir de hinchazón y distensión abdominal.",
+    "faq-q-2": "¿Cuáles son los síntomas mas comunes en los pacientes en diálisis y cómo puedo evitarlos?",
+    "faq-a-2": "Un paciente en diálisis puede sentir múltiples síntomas, algunos durante el tratamiento y otros entre sesiones. \n\nLos calambres musculares son un síntoma común que se produce principalmente por deshidratación. Para evitarlo o aliviarse durante un calambre, beba líquidos y manténgase hidratado. Este síntoma es común después de la diálisis debido a la eliminación de líquidos del cuerpo.\n\nLa hinchazón y la distensión abdominal son otros síntomas comúnes en los pacientes en diálisis. Estos síntomas suelen deberse a una sobrecarga de líquidos y pueden ser un signo de consumo excesivo de líquidos. Intente controlar su consumo de líquidos y reducirlo si su cuerpo suele sufrir de hinchazón y distensión abdominal.",
     "faq-q-3": "¿Puede esta aplicación ayudar a detectar signos tempranos de complicaciones?",
-    "faq-a-3": "Si bien esta aplicación puede ayudarte a comprender mejor tus hábitos y la diálisis, no pretende ayudarte con el autodiagnóstico. Si no te sientes bien o crees que tu salud está en riesgo, consulta con un médico cualificado u otro profesional de la salud.",
+    "faq-a-3": "Si bien esta aplicación puede ayudarte a comprender mejor tus hábitos y la diálisis, no pretende ayudarte con el autodiagnóstico. Si no te sientes bien o crees que tu salud está en riesgo, consulta con un médico calificado u otro profesional de la salud.",
     "faq-q-4": "¿Por qué es importante realizar un seguimiento de mi ingesta de líquidos?",
-    "faq-a-4": "Como paciente de diálisis, controlar su ingesta de líquidos puede ayudarle a evitar la sobrecarga de líquidos, que puede causar diversos problemas como hinchazón y distensión abdominal, especialmente en las extremidades inferiores.\n\nOtra desventaja de la sobrecarga de líquidos es la necesidad de eliminar mayores cantidades de líquido del cuerpo durante el tratamiento de diálisis. Cuanto más líquido se extraiga, mayor será el esfuerzo para el corazón y experimentará más efectos secundarios como cansancio, debilidad, calambres, etc.\n\nEs fundamental que controle su ingesta de líquidos y se mantenga por debajo del máximo recomendado por sesión. Generalmente, se recomienda que los pacientes de diálisis beban aproximadamente 1 litro (~34 oz) al día.",
+    "faq-a-4": "Como paciente de diálisis, controlar su ingesta de líquidos puede ayudarle a evitar la sobrecarga de líquidos, que puede causar diversos problemas como hinchazón (especialmente en las extremidades inferiores), distensión abdominal (principalmente en diálisis peritoneal) y, en casos mas graves, derrame pleural.\n\nOtra desventaja de la sobrecarga de líquidos es la necesidad de eliminar mayores cantidades de líquido del cuerpo durante el tratamiento de diálisis. Cuanto más líquido se extraiga, mayor será el esfuerzo para el corazón y experimentará más efectos secundarios como cansancio, debilidad, calambres, etc.\n\nEs fundamental que controle su ingesta de líquidos y se mantenga por debajo del máximo recomendado por sesión. Generalmente, se recomienda que los pacientes de diálisis beban alrededor de 1 litro (~34 oz) al día, lo que equivale aproximadamente a 1 kg (2,2 lbs) de peso (asumiendo que el líquido tiene una densidad similar al agua).",
     "faq-q-5": "¿Qué artículos se recomiendan para beber?",
-    "faq-a-5": "Las bebidas que debe beber dependen de su salud y de los nutrientes que su médico le haya recomendado reducir o aumentar. Recomendamos tomar batidos nutricionales específicos para pacientes en diálisis para evitar la pérdida de peso. También recomendamos bebidas como bebidas ricas en electrolitos, bajas en azúcar y potasio.",
-    "faq-a-6": "Recomendamos evitar bebidas alcohólicas, sopa de tomate o frijoles, bebidas no nutritivas como refrescos y café.",
+    "faq-a-5": "Las bebidas que debe beber dependen de su salud y de los nutrientes que su médico le haya recomendado reducir o aumentar. Recomendamos tomar batidos nutricionales específicos para pacientes en diálisis para evitar la pérdida de peso. También recomendamos bebidas bajas en azúcar (especialmente para pacientes con diabetes), potasio, y sodio.",
+    "faq-q-6": "¿Qué artículos se recomienda evitar beber?",
+    "faq-a-6": "Recomendamos evitar bebidas alcohólicas, sopa de tomate o frijoles, bebidas no nutritivas como refrescos y café, y bebidas que contengan mucho sodio.",
     "faq-q-7": "¿Está bien si bebo más de la cantidad máxima recomendada?",
     "faq-a-7": "No hay problema en beber más de la cantidad máxima recomendada si vives en una zona cálida, no experimentas hinchazón ni distensión abdominal incluso después de consumir más de la cantidad máxima, o sufres calambres con frecuencia. Consulta con tu médico y pregúntale cuál es tu ingesta diaria máxima recomendada según tus necesidades.\n\nEsta aplicación permite ajustar la cantidad máxima según tus necesidades, así que puedes cambiarla si no es la adecuada. Puedes cambiarla en la pestaña 'Configuración', luego en la página 'Configuraciones', en la sección 'Otros'.",
     "faq-q-8": "¿Qué se considera como un factor negativo en mi ingesta de líquidos?",
@@ -274,7 +277,7 @@
     "faq-q-9": "¿Debo registrar todo?",
     "faq-a-9": "No hay problema en omitir un registro si bebiste una cantidad insignificante, pero intenta mantenerlo actualizado para obtener los mejores resultados de las gráficas y cuidar mejor tu salud. Si te saltas algo en una sesión, puedes ir a la página de esa sesión y actualizarla directamente. Simplemente ve a la pestaña 'Seguimiento', luego a la página 'Registros de intervalos' y selecciona la sesión que te perdiste.",
     "faq-q-10": "¿Qué es el peso seco?",
-    "faq-a-10": "Su peso seco es el peso ideal después de cualquier sesión de diálisis. Lo asigna su médico y puede cambiar con el tiempo si aumenta o baja de peso. Cada vez que ingresa a un tratamiento de diálisis, generalmente llegará con un peso superior a su peso ideal.\n\nEl tratamiento tendrá como objetivo eliminar la mayor cantidad de líquido posible para alcanzar el peso ideal. Por ello, es importante minimizar la ingesta de líquidos para evitar la necesidad de extraer una cantidad mayor.\n\nTambién es importante tener en cuenta que puede llegar a la diálisis con un peso inferior al que se encuentra en seco. En estos casos, se le extraerá líquido, pero solo la cantidad mínima necesaria para eliminar el exceso de desechos de su cuerpo.",
+    "faq-a-10": "Su peso seco es el peso seco después de cualquier sesión de diálisis. Lo asigna su médico y puede cambiar con el tiempo si aumenta o baja de peso. Cada vez que ingresa a un tratamiento de diálisis, generalmente llegará con un peso superior a su peso seco.\n\nEl tratamiento tendrá como objetivo eliminar la mayor cantidad de líquido posible para alcanzar el peso seco. Por ello, es importante minimizar la ingesta de líquidos para evitar la necesidad de extraer una cantidad mayor.\n\nTambién es importante tener en cuenta que puede llegar a la diálisis con un peso inferior al que se encuentra en seco. En estos casos, se le extraerá líquido, pero solo la cantidad mínima necesaria para eliminar el exceso de desechos de su cuerpo.",
     "faq-q-11": "¿Por qué es importante realizar un seguimiento de mi peso a lo largo de las sesiones?",
     "faq-a-11": "Es importante llevar un registro de su peso a lo largo de las sesiones, ya que puede ayudarle a determinar si está subiendo de peso. Es posible que llegue a diálisis con un peso significativamente superior o inferior al objetivo varias veces, lo que podría indicar que está subiendo o bajando de peso. Si siente que su tratamiento de diálisis elimina demasiado líquido, puede hablar con su médico para aumentar o disminuir su peso seco y adaptarlo a dichos cambios.",
 
@@ -296,7 +299,7 @@
     "create-med-group-header":"Crear Grupo de Medicación",
     "med-group-reminder":"Recordatorio Programado",
     "med-group-refill-reminder":"Recordatorio de Recarga",
-    "med-group-on":"En",
+    "med-group-on":"",
     "med-group-and":"y ",
     "med-group-at":"a la(s) ",
     "med-group-medicines":"Medicamentos",
@@ -323,11 +326,11 @@
 
     "interval-fluid-header":"Control de Fluidos",
     "interval-weight-header":"Control de Peso por Diálisis",
-    "interval-items-header":"Artículos Consumidos",
+    "interval-items-header":"Líquido Consumido",
     "interval-arrival-label":"Peso de Llegada a Diálisis",
     "interval-leaving-label":"Peso Después de la Diálisis",
     "interval-total-label":"Total Consumido",
-    "interval-rec-label":"Intervalo Recomendado Máx",
+    "interval-rec-label":"Recomendado Máx Por Sesión",
     "interval-items-note":"Nota: Si se ha editado el total consumido, es posible que los artículos no sumen al total consumido correcto.",
     "interval-items-none":"No se Registraron Artículos",
 
@@ -413,5 +416,11 @@
     "weight-graph-tip-dry-tip": "El peso ideal que los médicos buscan al decidir la cantidad de líquido a eliminar",
 
     "med-group-edit-modal":"¿Quieres editar este grupo?",
-    "confirm-delete-modal":"Si lo eliminas, se eliminará definitivamente. ¡Confirma para eliminarlo!"
+    "confirm-delete-modal":"Si lo eliminas, se eliminará definitivamente. ¡Confirma para eliminarlo!",
+
+    "update-available-header":"Actualización Disponible",
+    "update-available-message":"Reiniciando para aplicar la última actualización",
+
+    "toast-med-group-edited-header":"Grupo de Medicación Editado",
+    "toast-med-group-edited-subtitle":"¡Tu grupo de medicamentos ha sido actualizado!"
 }

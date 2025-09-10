@@ -113,7 +113,7 @@
     "item-type-soda": "Soda",
     "item-type-water": "Water",
     "item-type-other": "Other",
-    "item-type-coffee": "Coffe/Tea",
+    "item-type-coffee": "Coffee/Tea",
     "item-type-juice": "Juice",
     "item-type-energy": "Energy Drink",
 
@@ -264,19 +264,19 @@
     "faq-q-3": "Can this app help detect early signs of complications?",
     "faq-a-3": "While this app may help you understand your habits and dialysis better, it is in no way meant to help with any self-diagnosis. If you feel unwell in any way, or believe your health is at risk, please seek out advice from a qualified doctor or other health professional!",
     "faq-q-4": "Why is it important to track my fluid intake?",
-    "faq-a-4": "As a dialysis patient, keeping track of your fluid intake can help you avoid fluid-overload which can cause several problems such as bloating and swelling, especially on your lower extremeties.\n\nThe other downside of fluid overload is the necessity of removing larger amounts of fluid from your body during your dialysis treatment. The more fluid that is removed, the more your heart will be strained, and you will experience more side effects such as tiredness, weakness, cramping, etc.\n\nIt is crucial for you to take care of your fluid intake and remain under the recommended max per session. It is generally advised for dialysis patients to drink about 1L (~34oz) a day.",
+    "faq-a-4": "As a dialysis patient, keeping track of your fluid intake can help you avoid fluid-overload which can cause several problems such as bloating and swelling (especially on your lower extremeties), abdominal distension (mainly in peritoneal dialysis), and in the most severe cases, pleural effusion.\n\nThe other downside of fluid overload is the necessity of removing larger amounts of fluid from your body during your dialysis treatment. The more fluid that is removed, the more your heart will be strained, and you will experience more side effects such as tiredness, weakness, cramping, etc.\n\nIt is crucial for you to take care of your fluid intake and remain under the recommended max per session. It is generally advised for dialysis patients to drink about 1L (~34 oz) a day which approximately equates to 1kg (2.2 lbs) of weight (assuming the fluid is similar in density to water).",
     "faq-q-5": "What items are recommended for drinking?",
-    "faq-a-5": "What items to drink can depend on your health and what nutrients your physician has advised you to lower/heighten. We do recommend taking specialized nutritional shakes targeted towards dialysis patients to avoid weight loss. We also recommend drinks suck as electrolyte rich drinks, low sugar and potassium drinks.",
+    "faq-a-5": "What items to drink can depend on your health and what nutrients your physician has advised you to lower/heighten. We do recommend taking specialized nutritional shakes targeted towards dialysis patients to avoid weight loss. We also recommend drinks that are low in sugar (especially for patients with diabetes), sodium, and potassium.",
     "faq-q-6": "What items are recommended to avoid drinking?",
-    "faq-a-6": "We recommend avoiding alchoholic beverages, tomato or bean soup, non-nutritional drinks such as soda and coffee.",
+    "faq-a-6": "We recommend avoiding alcoholic beverages, tomato or bean soups, non-nutritious beverages such as soda and coffee, and beverages that contain a lot of sodium.",
     "faq-q-7": "Is it okay if I drink above the recommended max amount?",
     "faq-a-7": "It is okay to drink above the recommended max amount if you live in a warmer area, don't experience bloating or swelling even after consuming more than the max, or experience cramping often. Talk to your physician and ask them what they'd recommend your max daily intake to be based on your conditions.\n\nThis app allows the user to change the max according to the users needs, so feel free to change it if it is not adequate! You can change it when going to the (Settings) tab, then into the (Configurations) page and under the (Others) options.",
     "faq-q-8": "What counts against my fluid intake?",
     "faq-a-8": "Any liquid will count against your fluid intake. This also includes items such as soup, ice cream, and yogurt. It's perfectly fine to consume any of these items in moderation as it is with any other liquid. Make sure you try and stick to the max recommended fluid per session.",
     "faq-q-9": "Should I log everything?",
-    "faq-a-9": "It is okay to omit a log if what you drank was a negligle amount, but try and keep your log updated to get the best results from the graphs and to better take care of your health! If you do miss a few items within a certain session, you can go into that sessions page and update it directly! Simply go into the (Tracking) tab, then into the (Interval Records) page and select whichever session you missed!",
+    "faq-a-9": "It is okay to omit a log if what you drank was a negligle amount, but try and keep your log updated to get the best results from the graphs and to better take care of your health! If you do miss a few items within a certain session, you can go into that sessions page and update it directly! Simply go into the (Tracking) tab, then into the (Interval Records) page and select whichever session you missed! Note: You'll only be able to change the amount of total fluid drank, items can't be added after the session has ended.",
     "faq-q-10": "What is dry weight?",
-    "faq-a-10": "Your dry weight is the goal weight after any dialysis session. It is assigned by your doctor and can change in time if you gain or lose weight. Everytime you go into a dialysis treatment, you will usually arrive with a weight heigher than your target dry weight.\n\nYour treatment will aim to remove as much liquid as you can handle to meet the target dry weight.It is because of this that keeping the amount of fluid you consume at a minimum to avoid needing a larger amount of fluid removed.\n\nIt is also important to note that you can arrive to dialysis under your dry weight. In these cases, you will still have fluid removed but only the minimum amount to remove excess waste in your body.",
+    "faq-a-10": "Your dry weight is the goal weight after any dialysis session. It is assigned by your doctor and can change in time if you gain or lose weight. Everytime you go into a dialysis treatment, you will usually arrive with a weight heigher than your target dry weight.\n\nYour treatment will aim to remove as much liquid as you can handle to meet the target dry weight. It is because of this that keeping the amount of fluid you consume at a minimum to avoid needing a larger amount of fluid removed.\n\nIt is also important to note that you can arrive to dialysis under your dry weight. In these cases, you will still have fluid removed but only the minimum amount to remove excess waste in your body.",
     "faq-q-11": "Why is it important to track my weight across sessions?",
     "faq-a-11": "It's important to track your weight across sessions because it can help you determine whether or not you are gaining weight or not. You may arrive to dialysis multiple times over/under the target weight by a large amount which may mean you're gaining/losing weight. If you feel your dialysis treatment removes too much fluid, you can talk to your physician to increase/decrease your dry weight to accomodate for such changes.",
 
@@ -416,6 +416,9 @@
 
     "med-group-edit-modal":"Do you want to edit this group?",
     "confirm-delete-modal":"Deleting this will permanently remove it. Confirm to delete!",
+
+    "update-available-header":"Update Available",
+    "update-available-message":"Restarting to apply the latest update",
 
     "toast-med-group-edited-header":"Medication Group Edited",
     "toast-med-group-edited-subtitle":"Your medication group has been updated!"

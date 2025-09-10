@@ -17,26 +17,6 @@ const CustomHeader = ({ style }: Props) => {
     AsyncStorage.setItem("unit", u);
   };
 
-  // For Theme Changing in Future
-  // const changeMode = () => {
-  //   const t = theme === "dark" ? "light" : "dark";
-  //   setTheme(t);
-  //   AsyncStorage.setItem("theme", t);
-  // };
-
-  // For Dynamic Font Sizes in Future
-  // const cycleThroughFont = () => {
-  //   if (fontSize === 24) {
-  //     setFontSize(sizes[0] as FontSizes)
-  //     AsyncStorage.setItem("fontSize", sizes[0].toString());
-  //     return;
-  //   }
-  //   const ind = sizes.indexOf(fontSize) + 1;
-
-  //   setFontSize(sizes[ind] as FontSizes)
-  //   AsyncStorage.setItem("fontSize", sizes[ind].toString());
-  //   return;
-  // }
 
   return (
     <View className={`px-5 pt-4 flex-row justify-between items-center ${style? style: "pb-6"}`}>
@@ -57,26 +37,9 @@ const CustomHeader = ({ style }: Props) => {
           onPress={changeUnits}
         >
           <Text className="text-white text-sm py-1 w-[60px] text-center font-semibold">
-            {unit.toLocaleUpperCase()}
+            {unit === "imperial"? "OZ/LB": "ML/KG"}
           </Text>
         </TouchableOpacity>
-
-        {/* <IconButton
-          Icon={theme === "light" ? LightMode : DarkMode}
-          size={24}
-          color="white"
-          style="bg-grey-300"
-          onPress={changeMode}
-        /> */}
-        
-        {/* <TouchableOpacity
-          className="p-2 bg-grey-300 rounded-md"
-          onPress={cycleThroughFont}
-        >
-          <Text className="text-white text-sm py-1 w-[25px] text-center font-semibold">
-            {t(getFontSizeTag(fontSize))}
-          </Text>
-        </TouchableOpacity> */}
       </View>
     </View>
   );

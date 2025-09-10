@@ -13,7 +13,6 @@ import {
 } from "@/utility/utilityFunctions";
 import CrossSVG from "@/assets/icons/misc/xcross.svg";
 import StarSVG from "@/assets/icons/misc/star-filled.svg";
-import { ItemListHandle } from "./ItemListContainer";
 import IconButton from "../../form/IconButton";
 import ModalContentWrapper from "../../misc/ModalContentWrapper";
 import CustomModal from "../../misc/CustomModal";
@@ -21,10 +20,7 @@ import CustomButton from "../../form/CustomButton";
 import { Favorite_Items, Items } from "@/utility/types";
 import FavoriteItem from "./FavoriteItem";
 import { favoriteItems as FavoriteItems } from "@/utility/DemoData";
-
-type Props = {
-  itemListRef: React.RefObject<ItemListHandle>;
-};
+import { MaterialIcons } from "@expo/vector-icons";
 
 type SubmitType = "add" | "favorite";
 
@@ -35,7 +31,7 @@ type FormValues = {
   submitType: SubmitType;
 };
 
-const AddItemForm = ({ itemListRef }: Props) => {
+const AddItemForm = () => {
   const { t } = useTranslation();
   const { unit } = useUser();
 
@@ -51,163 +47,153 @@ const AddItemForm = ({ itemListRef }: Props) => {
   };
 
   return (
-    <ScrollView>
-        <View className={`p-3 mx-5 rounded-md border border-[#ddd] bg-white elevation-sm ${show && "mb-1"}`}>
-          <View className={`${show && "mb-2"}`}>
-            <TouchableOpacity onPress={() => setShow(prev => !prev)}>
-              <Text className={`inline text-2xl font-semibold ${show? "text-center": "text-center"} `}>
-                {t("input-item-form-label")}
-              </Text>
-            </TouchableOpacity>  
-            {show && 
-            <IconButton
-            style="absolute right-1"
-            iconName="info"
-            onPress={() => setInfoModalOpen(true)}
-            size={20}
-            />
-            }
-          </View>
-          <Formik<FormValues>
-            initialValues={{
-              name: "",
-              amount: undefined,
-              type: "water",
-              submitType: "add",
-            }}
-            validationSchema={ItemSchema}
-            onSubmit={() => {}}
-          >
-            {({
-              handleSubmit,
-              handleChange,
-              values,
-              setFieldValue,
-              errors,
-              touched,
-              resetForm,
-            }) => (
-              <View className="flex-column justify-center">
-                {show && 
-                <View className="flex-row">
-                  <View className="flex-1">
-                    <CustomTextInput
-                      value={values.name}
-                      id="item-name"
-                      placeholder={t("input-item-name-ph")}
-                      onChange={handleChange("name")}
-                      style="px-4 border-b"
-                      returnKeyType="next"
-                      onSubmitEditing={() => inputRef.current?.focus()}
-                      />
-                    <ValidationError
-                      error={errors.name}
-                      touched={touched.name}
-                      />
-                    <CustomTextInput
-                      value={values.amount}
-                      id="item-name"
-                      ref={inputRef}
-                      placeholder={t("input-item-amount-ph")}
-                      onChange={handleChange("amount")}
-                      style="px-4 border-b"
-                      unit={getFluidTag(unit)}
-                      unitStyle="bg-white border-b"
-                      keyboardType="number-pad"
-                      />
-                    <ValidationError
-                      error={errors.amount}
-                      touched={touched.amount}
-                      />
-                    <View className="my-2 px-[.175rem]">
-                      <CustomDropdown
-                        data={drinkTypes}
-                        setValue={(item: Items) => setFieldValue("type", item)}
-                        value={values.type}
-                        icon
-                      />
+    <View>
+      <TouchableOpacity onPress={() => setShow(prev => !prev)} className={`p-2 w-[95%] mx-auto rounded-md bg-blue-200 flex-row items-center gap-2`}>
+        <MaterialIcons name="water-drop" size={24}/>
+        <Text className={`inline text-2xl font-semibold ${show? "text-center": "text-center"} `}>
+          {t("input-item-form-label")}
+        </Text>
+      </TouchableOpacity>  
+      <CustomModal isOpen={show} setIsOpen={setShow} withInput>
+        <ModalContentWrapper headerLabel="input-item-form-label" closeModal={setShow}>
+          <ScrollView>
+            <Formik<FormValues>
+              initialValues={{
+                name: "",
+                amount: undefined,
+                type: "water",
+                submitType: "add",
+              }}
+              validationSchema={ItemSchema}
+              onSubmit={() => {}}
+            >
+              {({
+                handleSubmit,
+                handleChange,
+                values,
+                setFieldValue,
+                errors,
+                touched,
+              }) => (
+                <View className="flex-column justify-center">
+      
+                  <View className="flex-row">
+                    <View className="flex-1">
+                      <CustomTextInput
+                        value={values.name}
+                        id="item-name"
+                        placeholder={t("input-item-name-ph")}
+                        onChange={handleChange("name")}
+                        style="px-4 border-b"
+                        returnKeyType="next"
+                        onSubmitEditing={() => inputRef.current?.focus()}
+                        />
                       <ValidationError
-                        error={errors.type}
-                        touched={touched.type}
+                        error={errors.name}
+                        touched={touched.name}
+                        />
+                      <CustomTextInput
+                        value={values.amount}
+                        id="item-name"
+                        ref={inputRef}
+                        placeholder={t("input-item-amount-ph")}
+                        onChange={handleChange("amount")}
+                        style="px-4 border-b"
+                        unit={getFluidTag(unit)}
+                        unitStyle="bg-white border-b"
+                        keyboardType="number-pad"
+                        />
+                      <ValidationError
+                        error={errors.amount}
+                        touched={touched.amount}
+                        />
+                      <View className="my-2 px-[.175rem]">
+                        <CustomDropdown
+                          data={drinkTypes}
+                          setValue={(item: Items) => setFieldValue("type", item)}
+                          value={values.type}
+                          icon
+                        />
+                        <ValidationError
+                          error={errors.type}
+                          touched={touched.type}
+                          />
+                      </View>
+                    </View>
+                    <View className="justify-between gap-5 py-3 items-center">
+                      <IconButton
+                        iconName="info"
+                        size={28}
+                        onPress={() => setInfoModalOpen(true)}
+                        />
+                      <IconButton
+                        Icon={StarSVG}
+                        size={28}
+                        color="#FDDD5C"
+                        onPress={() => {
+                          setFieldValue("submitType", "favorite");
+                          handleSubmit();
+                        }}
+                        style="bg-warning"
+                        />
+                      <IconButton
+                        iconName="add"
+                        size={28}
+                        onPress={() => {
+                          setFieldValue("submitType", "add");
+                          handleSubmit();
+                        }}
+                        style="bg-success"
                         />
                     </View>
                   </View>
-                  <View className="justify-between gap-4 py-3 items-center">
-                    <IconButton
-                      Icon={StarSVG}
-                      size={28}
-                      color="#FDDD5C"
-                      onPress={() => {
-                        setFieldValue("submitType", "favorite");
-                        handleSubmit();
-                      }}
-                      style="bg-warning"
-                      />
-                    <IconButton
-                      Icon={CrossSVG}
-                      strokeWidth={1}
-                      size={28}
-                      onPress={() => resetForm()}
-                      style="bg-danger"
-                      />
-                    <IconButton
-                      iconName="add"
-                      size={28}
-                      onPress={() => {
-                        setFieldValue("submitType", "add");
-                        handleSubmit();
-                      }}
-                      style="bg-success"
-                      />
-                  </View>
-                </View>
-              }
-              {show && 
-                <CustomButton
-                label={t("favorites-button-label")}
-                style="border border-lightgrey bg-white w-full"
-                textStyle="text-grey-300"
-                onPress={() => {
-                  getFavoriteItems().then(() =>
-                    setIsFavoritesModalOpen(true)
-                );
-              }}
-              />
-              }
-                <CustomModal
-                setIsOpen={setIsFavoritesModalOpen}
-                isOpen={isFavoritesModalOpen}
-                animation="none"
-                >
-                  <ModalContentWrapper
-                    closeModal={setIsFavoritesModalOpen}
-                    headerLabel={t("favorites-modal-header")}
-                    subtitle={t("favorites-modal-subtitle")}
+                  <CustomButton
+                    label={t("favorites-button-label")}
+                    style="border border-lightgrey bg-white py-2 w-[95%]"
+                    textStyle="text-grey-300"
+                    onPress={() => {
+                      getFavoriteItems().then(() =>
+                        setIsFavoritesModalOpen(true)
+                    );
+                  }}
+                  />
+                  <CustomModal
+                  setIsOpen={setIsFavoritesModalOpen}
+                  isOpen={isFavoritesModalOpen}
+                  animation="none"
                   >
-                    <ScrollView
-                      className={`${
-                        favoriteItems?.length === 0 ? "m-auto" : "h-[250px]"
-                      }`}
+                    <ModalContentWrapper
+                      closeModal={setIsFavoritesModalOpen}
+                      headerLabel={t("favorites-modal-header")}
+                      subtitle={t("favorites-modal-subtitle")}
                     >
-                      {favoriteItems?.map((item) => (
-                        <FavoriteItem
-                          key={item.favorite_id}
-                          item={item}
-                          setFieldValue={setFieldValue}
-                        />
-                      ))}
-                      {favoriteItems?.length === 0 && (
-                        <Text className="my-2 text-center text-lg font-bold bg-grey-200 p-2 rounded-md text-white">
-                          {t("favorites-empty-error")}
-                        </Text>
-                      )}
-                    </ScrollView>
-                  </ModalContentWrapper>
-                </CustomModal>
-              </View>
-            )}
-          </Formik>
-        </View>
+                      <ScrollView
+                        className={`${
+                          favoriteItems?.length === 0 ? "m-auto" : "h-[250px]"
+                        }`}
+                      >
+                        {favoriteItems?.map((item) => (
+                          <FavoriteItem
+                            key={item.favorite_id}
+                            item={item}
+                            setFieldValue={setFieldValue}
+                          />
+                        ))}
+                        {favoriteItems?.length === 0 && (
+                          <Text className="my-2 text-center text-lg font-bold bg-grey-200 p-2 rounded-md text-white">
+                            {t("favorites-empty-error")}
+                          </Text>
+                        )}
+                      </ScrollView>
+                    </ModalContentWrapper>
+                  </CustomModal>
+                </View>
+              )}
+            </Formik>
+          </ScrollView>
+
+        </ModalContentWrapper>
+      </CustomModal>
       <CustomModal setIsOpen={setInfoModalOpen} isOpen={infoModalOpen}>
         <ModalContentWrapper
           closeModal={setInfoModalOpen}
@@ -219,7 +205,7 @@ const AddItemForm = ({ itemListRef }: Props) => {
           </ScrollView>
         </ModalContentWrapper>
       </CustomModal>
-    </ScrollView>
+    </View>
   );
 };
 
