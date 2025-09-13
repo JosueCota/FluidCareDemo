@@ -61,6 +61,7 @@ const IntervalsPage = () => {
         <IconButton
           iconName="chevron-left"
           size={32}
+          disabled
           onPress={() => decreaseMonth(setTimeFrame, timeFrame)}
         />
         <Text className="text-3xl font-bold text-center">
@@ -76,7 +77,7 @@ const IntervalsPage = () => {
           iconName="chevron-right"
           size={32}
           onPress={() => increaseMonth(setTimeFrame, timeFrame)}
-          disabled={shouldDisableNextMonth(timeFrame)}
+          disabled
         />
       </View>
       <FlatList

@@ -232,7 +232,7 @@
 
     "validation-date-invalid-past": "¡Es necesario fijar una fecha posterior a hoy, no en el pasado o en el hoy!",
 
-    "unit-pill": "Pill",
+    "unit-pill": "Pastilla",
     "unit-mg": "mg",
     "unit-mcg": "mcg",
     "unit-g": "g",
@@ -256,7 +256,7 @@
     "refill-info-toast-subtitle": "¡Asegúrese de actualizar la fecha de recarga de su medicamento a una nueva!",
     
     "faq-general-header": "Preguntas Generales",
-    "faq-fluid-header": "Preguntas Sobre Ingesta de líquidos",
+    "faq-fluid-header": "Preguntas Sobre Ingesta de Líquidos",
     "faq-weight-header": "Preguntas Sobre Peso",
     "faq-q-1": "¿Puedo usar esta aplicación si tengo diálisis peritoneal?",
     "faq-a-1": "Aunque esta aplicación se diseñó pensando en la hemodiálisis, debería funcionar para personas en diálisis peritoneal. Se aplicarán restricciones de líquidos, y aunque su diálisis sea más frecuente, debería ayudarle durante su proceso.",
@@ -357,7 +357,14 @@
     "perceived-wellness-2":"Sensación promedio al salir de la diálisis según el mes seleccionado.",
     "perceived-wellness-3":"Cuanto más bajo sea el promedio, peor te has sentido. Cuanto más alto sea el promedio, mejor te has sentido.",
 
+    "medication-type-btn-create": "Crear Nuevo Grupo",
+    "medication-type-btn-dupe": "Duplicar Grupo",
+    "medication-type-header": "¡Elige cómo quieres crear tu grupo!",
+    "medication-type-dupe-label": "Seleccione un Grupo",
+    "medication-type-dupe-note": "Nota: La duplicación no transfiere los recordatorios, deberá configurarlos usted mismo editando el nuevo grupo después de crearlo.",
+
     "medication-form-group-subtitle": "Crea un grupo de medicamentos y añade las pastillas correspondientes. Este grupo tendrá la misma hora, así que asegúrate de añadir solo las pastillas correspondientes.",
+    "medication-group-info-label": "Información del Grupo",
     "medication-form-group-name-label": "Nombre del Grupo de Medicación",
     "medication-form-group-name-ph": "ej. 'Medicina de la Mañana'",
     "medication-form-group-notes-label": "Notas",
@@ -422,5 +429,7 @@
     "update-available-message":"Reiniciando para aplicar la última actualización",
 
     "toast-med-group-edited-header":"Grupo de Medicación Editado",
-    "toast-med-group-edited-subtitle":"¡Tu grupo de medicamentos ha sido actualizado!"
+    "toast-med-group-edited-subtitle":"¡Tu grupo de medicamentos ha sido actualizado!",
+
+    "default-select-placeholder": "Seleccione un Artículo"
 }

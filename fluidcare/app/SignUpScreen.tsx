@@ -1,7 +1,7 @@
 import CustomButton from "@/components/form/CustomButton";
 import InputOverflowWrapper from "@/components/form/InputOverflowWrapper";
 import React, { useState } from "react";
-import { ScrollView, Text, View } from "react-native";
+import { SafeAreaView, ScrollView, Text, View } from "react-native";
 import { Formik } from "formik";
 import Radio from "@/components/form/Radio";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -12,20 +12,15 @@ import { Units } from "@/utility/types";
 import MultiSelectBoxes from "@/components/form/MultiSelectBoxes";
 import ValidationError from "@/components/form/ValidationError";
 import { days } from "@/utility/data";
-import { SignupSchema } from "@/utility/yupSchemas";
 import {
-  daysToArray,
   formatHours,
   formatMinutes,
   getWeightTag,
   showToast,
   timeOfDay,
-  timeToDate,
 } from "@/utility/utilityFunctions";
 import { useUser } from "@/context/UserContext";
-import Loader from "@/components/misc/Loader";
 import CustomDatePicker from "@/components/form/CustomDatePicker";
-import { dryWeights, user } from "@/utility/DemoData";
 
 const SignUpScreen = () => {
   const { t } = useTranslation();
@@ -61,111 +56,95 @@ const SignUpScreen = () => {
 
 
   return (
-    <ScrollView contentContainerClassName="flex-1 justify-around bg-white">
-      <InputOverflowWrapper>
-        <Formik
-          initialValues={{
-            name: user.name,
-            dryWeight: dryWeights[0].weight,
-            dialDays: daysToArray(user.dial_days),
-            dialTime: timeToDate(user.dial_time),
-          }}
-          validationSchema={SignupSchema}
-          onSubmit={() => handleSubmit()}
-        >
-          {({
-            handleChange,
-            handleSubmit,
-            setFieldValue,
-            values,
-            errors,
-            touched,
-          }) => (
-            <View className="mx-6">
-              <Text className="text-5xl font-semibold text-center mt-14">
+     <SafeAreaView className="flex-1 bg-white">
+      <Formik
+        initialValues={{
+          name: "",
+          dryWeight: -1,
+          dialDays: [],
+          dialTime: new Date(2024, 5, 24, 12, 0, 0, 0),
+        }}
+        onSubmit={() => handleSubmit()}
+      >
+        {({ handleChange, handleSubmit, setFieldValue, values, errors, touched }) => (
+          <View className="flex-1">
+            <ScrollView
+              className="w-[90%] mx-auto flex-1"
+              contentContainerStyle={{ paddingBottom: 10 }}
+            >
+              <Text className="text-5xl font-semibold text-center mt-10">
                 {t("header-sign-up")}
               </Text>
-              {loading ? (
-                <Loader />
-              ) : (
-                <>
-                  <CustomTextInput
-                    id="name"
-                    defaultValue={values.name}
-                    placeholder={t("input-name-ph")}
-                    label={"input-name-label"}
-                    onChange={handleChange("name")}
-                    />
-                  <ValidationError error={errors.name} touched={touched.name} />
-                  <Radio
-                    checkedValue={unit}
-                    label={"input-unit-label"}
-                    onChange={updateUnits}
-                    options={[
-                      { value: "imperial", label: "lb/oz" },
-                      { value: "metric", label: "kg/ml" },
-                    ]}
-                    style="self-center"
-                    activeColor="bg-blue-200"
-                    />
-                  <CustomTextInput
-                    id="dry-weight"
-                    tooltip="tooltip-dry-weight"
-                    unit={getWeightTag(unit)}
-                    label={"input-dry-weight-label"}
-                    onChange={handleChange("dryWeight")}
-                    keyboardType={"number-pad"}
-                    />
-                  <ValidationError
-                    error={errors.dryWeight}
-                    touched={touched.dryWeight}
-                    />
 
-                  <MultiSelectBoxes
-                    options={days}
-                    tooltip="tooltip-dial-days"
-                    value={values.dialDays}
-                    label={"input-dial-days-label"}
-                    fieldName="dialDays"
-                  />
-                  <ValidationError
-                    error={String(errors.dialDays)}
-                    touched={touched.dialDays}
-                  />
+              <CustomTextInput
+                id="name"
+                placeholder={t("input-name-ph")}
+                label={"input-name-label"}
+                onChange={handleChange("name")}
+              />
+              <ValidationError error={errors.name} touched={touched.name} />
 
-                  <CustomDatePicker btnLabel={`${formatHours(values.dialTime)}:${formatMinutes(
-                      values.dialTime
-                    )} ${timeOfDay(values.dialTime)}`} 
-                    inputLabel="input-dial-time-label"
-                    inputTip="tooltip-dial-time"
-                    value={values.dialTime}
-                    
-                    setFieldValue={(date:Date) => {
-                      setFieldValue("dialTime", date)
-                    } }
-                    touched={touched.dialTime}
-                    error={errors.dialTime}
-                    mode={"time"}
-                  />
-                  <View className="flex-row fixed bottom-0 mb-6 pt-4">
-                    <CustomButton
-                      onPress={() => router.replace("/OnboardingScreen")}
-                      label={t("btn-back")}
-                      style="bg-danger"
-                    />
-                    <CustomButton
-                      onPress={handleSubmit}
-                      label={t("btn-submit")}
-                      style="bg-success"
-                    />
-                  </View>
-                </>
-              )}
+              <Radio
+                checkedValue={unit}
+                label={"input-unit-label"}
+                onChange={updateUnits}
+                options={[
+                  { value: "imperial", label: "lb/oz" },
+                  { value: "metric", label: "kg/ml" },
+                ]}
+                style="self-center"
+                activeColor="bg-blue-200"
+              />
+
+              <CustomTextInput
+                id="dry-weight"
+                tooltip="tooltip-dry-weight"
+                unit={getWeightTag(unit)}
+                label={"input-dry-weight-label"}
+                onChange={handleChange("dryWeight")}
+                keyboardType={"decimal-pad"}
+              />
+              <ValidationError error={errors.dryWeight} touched={touched.dryWeight} />
+
+              <MultiSelectBoxes
+                options={days}
+                tooltip="tooltip-dial-days"
+                value={values.dialDays}
+                label={"input-dial-days-label"}
+                fieldName="dialDays"
+              />
+              <ValidationError error={String(errors.dialDays)} touched={touched.dialDays} />
+
+              <CustomDatePicker
+                btnLabel={`${formatHours(values.dialTime)}:${formatMinutes(values.dialTime)} ${timeOfDay(values.dialTime)}`}
+                inputLabel="input-dial-time-label"
+                inputTip="tooltip-dial-time"
+                value={values.dialTime}
+                setFieldValue={(date: Date) => {
+                  setFieldValue("dialTime", date);
+                }}
+                touched={touched.dialTime}
+                error={errors.dialTime}
+                mode={"time"}
+              />
+            </ScrollView>
+            <View className="flex-row border-t border-t-lightgrey bg-white py-6">
+              <CustomButton
+                onPress={() => router.replace("/OnboardingScreen")}
+                label={t("btn-back")}
+                style="bg-white border"
+              />
+              <CustomButton
+                onPress={handleSubmit}
+                label={t("btn-submit")}
+                style="bg-blue-300 border border-blue-300"
+                textStyle="text-white"
+              />
             </View>
-          )}
-        </Formik>
-      </InputOverflowWrapper>
-    </ScrollView>
+          </View>
+        )}
+      </Formik>
+    </SafeAreaView>
   );
 };
 

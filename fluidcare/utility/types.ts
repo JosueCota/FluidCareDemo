@@ -79,18 +79,12 @@ export type Notifications = {
 };
 
 /////////////////// PROP TYPES ///////////////////
-export type OnboardSlideProp = {
-    imgSrc: any
-    text: string
-    title: string
-};
-
 export type AddFavoriteItem = {
   setFieldValue: (field: string, value: any, shouldValidate?: boolean) => Promise<void | FormikErrors<FormValues>>;
   item: Favorite_Items;  
 };
 
-export type FormSlides = {
+export type Slides = {
     id: string,
     component: React.JSX.Element
 }

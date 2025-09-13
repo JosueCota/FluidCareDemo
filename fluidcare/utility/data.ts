@@ -121,6 +121,9 @@ export const unitTypes : { label: string; value: MedicationUnits; } [] =
   { label: 'unit-iu', value: 'IU' },
 ];
 
+export const unitMap: Record<MedicationUnits, string> = 
+  Object.fromEntries(unitTypes.map(u => [u.value, u.label])) as Record<MedicationUnits, string>;
+
 export const unitIcons = {
   pill: IndividualPillsSVG,
   ml: LiquidMedSVG,

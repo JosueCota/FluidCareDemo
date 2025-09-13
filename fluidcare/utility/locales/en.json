@@ -298,6 +298,7 @@
     "create-med-group-header":"Create Medication Group",
     "med-group-reminder":"Scheduled Reminder",
     "med-group-refill-reminder":"Refill Reminder",
+    "medication-form-group-name-label": "Medication Group Name",
     "med-group-on":"On",
     "med-group-and":"and ",
     "med-group-at":"at ",
@@ -354,8 +355,14 @@
     "perceived-wellness-2":"Average feeling coming out of dialysis based off the selected month.",
     "perceived-wellness-3":"The lower the average, the worse you've felt. The higher the average, the better you've felt.",
 
+    "medication-type-btn-create": "Create New Group",
+    "medication-type-btn-dupe": "Duplicate Group",
+    "medication-type-header": "Choose how you want to create your group!",
+    "medication-type-dupe-label": "Select a Group",
+    "medication-type-dupe-note": "Note: Duplicating doesn't carry over reminders, you will have to set them yourself by editting the new group after its made.",
+    
     "medication-form-group-subtitle": "Create a medication group and add the pills that correspond with it. This medication group will have the same time, so make sure to only put pills that are for it.",
-    "medication-form-group-name-label": "Medication Group Name",
+    "medication-group-info-label": "Medication Group Information",
     "medication-form-group-name-ph": "ex. 'Morning Pills'",
     "medication-form-group-notes-label": "Notes",
     "medication-form-group-notes-ph": "Add any notes or extra information you would like to include about this group of medications.",
@@ -384,7 +391,7 @@
     "notifications-filter-meds":"Medications",
     "notifications-filter-interval":"Intervals",
     "notifications-filter-refill":"Refills",
-    "notifications-no-items-found":"Not Items Found",
+    "notifications-no-items-found":"No Items Found",
     "notifications-subtitle":"Notifications from the last 60 days.",
 
     "hydration-tracking-avg-header":"Average Intake Per Day",
@@ -421,5 +428,7 @@
     "update-available-message":"Restarting to apply the latest update",
 
     "toast-med-group-edited-header":"Medication Group Edited",
-    "toast-med-group-edited-subtitle":"Your medication group has been updated!"
+    "toast-med-group-edited-subtitle":"Your medication group has been updated!",
+
+    "default-select-placeholder": "Select An Item"
 }

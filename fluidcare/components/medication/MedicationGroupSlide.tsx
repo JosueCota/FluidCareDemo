@@ -140,20 +140,25 @@ const MedicationGroupSlide = ({ ...props }: Props) => {
               )}
             </ScrollView>
             <View className="py-2 bg-white border-t border-gray-200 flex-row ">
-              {props.setEditting && (
+              {props.setEditting ? (
                 <CustomButton
                   label="btn-cancel"
                   textStyle="text-white"
                   style="bg-blue-300  w-[30%]"
                   onPress={() => props.setEditting!(false)}
                 />
-              )}
+              ): 
+                <CustomButton
+                label="btn-back"
+                textStyle="text-white"
+                style="bg-blue-300  w-[30%]"
+                onPress={() => props.slideScreen(-1)}
+                />
+              }
               <CustomButton
                 label="btn-next"
                 textStyle="text-white"
-                style={`bg-blue-300  ${
-                  props.setEditting ? "w-[30%]" : "w-[50%]"
-                }`}
+                style={`bg-blue-300 w-[30%]`}
                 onPress={handleSubmit}
               />
             </View>

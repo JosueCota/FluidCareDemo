@@ -3,12 +3,13 @@ import { FlatList, View, useWindowDimensions } from "react-native";
 import { useTranslation } from "react-i18next";
 import MedicationGroupSlide from "../../../components/medication/MedicationGroupSlide";
 import MedicationFormSlide from "../../../components/medication/MedicationSlide";
-import { FormSlides, Medication_Groups, Medications, Notifications } from "@/utility/types";
+import { Slides, Medication_Groups, Medications } from "@/utility/types";
 import ConfirmationSlide from "../../../components/medication/ConfirmationSlide";
 import { daysToArray, showToast, timeToDate } from "@/utility/utilityFunctions";
 import { router } from "expo-router";
 import Loader from "@/components/misc/Loader";
 import uuid from 'react-native-uuid';
+import ChooseCreateTypeSlide from "@/components/medication/ChooseCreateTypeSlide";
 
 export type MedicationValues = {
   medicationName: string;
@@ -113,7 +114,7 @@ const MedicationsForm = ({
   }, [currentSlide]);
 
   const slideScreen = (next: -1 | 1) => {
-    if (currentSlide !== 2 && next === 1) {
+    if (currentSlide !== 3 && next === 1) {
       setCurrentSlide((prev) => prev + 1);
     } else if (currentSlide !== 0 && next === -1) {
       setCurrentSlide((prev) => prev - 1);
@@ -138,9 +139,13 @@ const MedicationsForm = ({
     router.back();
   };
 
-  let formSlides: FormSlides[] = [];
+  let formSlides: Slides[] = [];
   if (mode === "create") {
     formSlides = [
+      { 
+        id:"choose",
+        component: <ChooseCreateTypeSlide slideScreen={slideScreen}/>
+      },
       {
         id: "group",
         component: (

@@ -7,6 +7,9 @@ import {
 } from "../../app/(tabs)/(medication)/MedicationsForm";
 import { useTranslation } from "react-i18next";
 import { capitalizeFirstLetter, getDayName } from "@/utility/utilityFunctions";
+import InfoCard from "../misc/InfoCard";
+import { Medications, MedicationUnits } from "@/utility/types";
+import Medication from "./Medication";
 
 type Props = {
   group?: GroupFormData | undefined;
@@ -27,70 +30,61 @@ const ConfirmationSlide = ({
 
   return (
     <View className="w-[100vw]">
-      <Text className="text-4xl text-center font-semibold mt-4">
-        {t("medication-form-conf-header")}
-      </Text>
-      <ScrollView className="w-[95%] mx-auto my-2 px-2 mt-4">
-        <Text className="text-2xl text-center mb-2">
-          {t("medication-form-group-name-label")}
+      <View className="bg-blue-300 p-4 rounded-b-xl">
+        <Text className="text-4xl text-white text-center font-semibold">
+          {t("medication-form-conf-header")}
         </Text>
-        <Text className="text-3xl font-semibold text-center mb-2">
+      </View>
+      <ScrollView className="w-[95%] mx-auto px-2" contentContainerStyle={{paddingBottom:5}}>
+        <Text className="text-3xl font-semibold text-center mb-2 mt-4">
           {group.values.groupName}
         </Text>
 
         {group.values.notes && (
-          <Text className="text-lg text-grey-200">
-            {t("medication-form-group-notes-label")}: {group.values.notes}
+        <InfoCard label="medication-form-group-notes-label" iconName="article">
+          <Text className="text-md text-grey-200">
+            {group.values.notes}
           </Text>
+        </InfoCard>
         )}
+          
         {group.values.reminder && group.values.days && group.values.time && (
-          <Text className="text-lg text-grey-200 mt-1">
-            {t("medication-form-conf-reminder-1")}
-            {group.values.days
-              .sort((a, b) => a - b)
-              .map((day, index) => (
-                <Text key={`med-group-days-${index}`}>
-                  {capitalizeFirstLetter(getDayName(day + 1, i18n.language))}
-                  {index + 1 !== group.values.days?.length && ", "}
-                </Text>
-              ))}{" "}
-            {t("med-group-at")}
-            {new Date(group.values.time).toLocaleTimeString(i18n.language, {
-              hour12: true,
-              minute: "2-digit",
-              hour: "2-digit",
-            })}{t("medication-form-conf-reminder-2")}
-          </Text>
+          <InfoCard label="med-group-reminder" iconName="calendar-month">
+            <Text className="text-md text-grey-200 mt-1">
+              {t("medication-form-conf-reminder-1")}
+              {group.values.days
+                .sort((a, b) => a - b)
+                .map((day, index) => (
+                  <Text key={`med-group-days-${index}`}>
+                    {capitalizeFirstLetter(getDayName(day + 1, i18n.language))}
+                    {index + 1 !== group.values.days?.length && ", "}
+                  </Text>
+                ))}{" "}
+              {t("med-group-at")}
+              {new Date(group.values.time).toLocaleTimeString(i18n.language, {
+                hour12: true,
+                minute: "2-digit",
+                hour: "2-digit",
+              })}{t("medication-form-conf-reminder-2")}
+            </Text>
+          </InfoCard>
         )}
 
         <Text className="text-2xl font-semibold mt-2">{t("med-group-medicines")}</Text>
-        <View className="border-t border-lightgrey"></View>
-        {medicines.map((med, index) => (
-          <View key={index} className="py-4 px-6 bg-lightgrey rounded-md my-2">
-            <View className="flex-row justify-between items-center">
-              <Text className="text-xl font-semibold">
-                {med.values.medicationName}
-              </Text>
-              <Text className="text-md italic text-grey-200">
-                {med.values.amount} {med.values.unit}(s)
-              </Text>
-            </View>
-            <View className="mx-2">
-              {med.values.notes && (
-                <Text className="text-md">{med.values.notes}</Text>
-              )}
-              {med.values.refillReminder && (
-                <Text className="text-md text-grey-200 text-right">
-                  {t("medication-form-meds-refill")}
-                  {med.values.refillReminder?.toLocaleDateString(
-                    i18n.language,
-                    { dateStyle: "medium" }
-                  )}
-                </Text>
-              )}
-            </View>
-          </View>
-        ))}
+        <View className="border-t border-lightgrey mb-4"></View>
+        {medicines.map((med, index) => {
+          const medication: Medications = {
+            name: med.values.medicationName,
+            med_group_id: null!,
+            medication_id: index,
+            amount: med.values.amount,
+            unit: med.values.unit as MedicationUnits,
+            notes: med.values.notes,
+            refill_reminder: med.values.refillReminder?.toISOString()
+          }
+          return (
+            <Medication med={medication} key={index}/>
+        )})}
       </ScrollView>
       <View className="mx-auto w-[100vw] py-2 flex-row justify-around border-t border-gray-200">
         <CustomButton

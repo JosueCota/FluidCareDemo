@@ -1,21 +1,27 @@
-import { OnboardSlideProp } from '@/utility/types'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { View, Text, Image } from 'react-native'
+import { ScrollView, Text, Image } from 'react-native'
 
-const OnboardSlide = ({item}: {item: OnboardSlideProp}) => {
+export type OnboardSlideProps = {
+  imgSrc?: any
+  text: string
+  title: string
+}
+
+const OnboardSlide = ({imgSrc, text, title}:  OnboardSlideProps) => {
 
   const { t } = useTranslation()
   
   return (
-    <View className="items-center mt-[60px]">
-        <Image
-            source={item.imgSrc}
-            className='h-[300px] w-screen'
-        />
-        <Text className='text-center font-extrabold text-white text-2xl mt-4 mb-3'>{t(item.title)}</Text>
-        <Text className='px-8 text-center text-white text-lg w-screen'>{t(item.text)}</Text>
-    </View>
+    <ScrollView className={`${imgSrc? "pt-[15%]": "pt-4"} flex-1`} contentContainerStyle={{alignItems:"center", paddingBottom:50}}>
+        {imgSrc && <Image
+            source={imgSrc}
+            className='h-[200px] w-[90%] rounded-3xl bg-grey-300 '
+            resizeMode='contain'
+        />}
+        <Text className={`w-[90%] text-center font-extrabold text-black text-2xl ${imgSrc && "mt-4"} mb-3`}>{t(title)}</Text>
+        <Text className='px-3 text-center text-black text-lg w-screen'>{t(text)}</Text>
+    </ScrollView>
   )
 }
 

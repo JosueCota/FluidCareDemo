@@ -1,17 +1,16 @@
-import { OnboardSlideProp } from '@/utility/types'
 import { MaterialIcons } from '@expo/vector-icons'
 import React from 'react'
 import { View } from 'react-native'
 
 type Props = {
     currentSlide: number,
-    slides: OnboardSlideProp[]
+    slideLength: number
 }
 
-const SlideFooter = ({currentSlide, slides}: Props) => {
+const SlideFooter = ({currentSlide, slideLength}: Props) => {
   return (
-    <View className='h-[10%] mx-auto gap-5 flex-row items-center'>
-        {slides.map((_, i) => <MaterialIcons name='circle' color={currentSlide >= i ? "white" : "darkgrey"} size={currentSlide !== i ? 24 : 30} key={i}/>)}
+    <View className='h-[5%] mx-auto gap-5 flex-row items-center'>
+        {Array.from({length: slideLength}).map((_, i) => <MaterialIcons name='circle' color={currentSlide >= i ? "#322F2F" : "darkgrey"} size={currentSlide !== i ? 24 : 30} key={i}/>)}
     </View>
   )
 }

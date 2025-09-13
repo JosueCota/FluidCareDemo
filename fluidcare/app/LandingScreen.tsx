@@ -21,7 +21,7 @@ export default function LandingScreen() {
 
   return (
     <View className="flex-1 items-center bg-offwhite">
-      <Text className="text-5xl font-bold bg-blue-300 p-6 rounded-md mt-16 mb-3">
+      <Text className="text-5xl font-bold bg-blue-300 p-6 rounded-md mt-16 mb-3 text-center">
         <Text className="text-blue-100">Fluid</Text>
         <Text className="text-success">Care</Text>
       </Text>
@@ -39,7 +39,7 @@ export default function LandingScreen() {
         <CustomButton
           onPress={() => router.replace("/OnboardingScreen")}
           label={t("btn-get-started")}
-          style="bg-white border py-4"
+          style="bg-white border py-4 w-[50%]"
         />
       </View>
     </View>
